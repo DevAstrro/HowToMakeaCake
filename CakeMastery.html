@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Make a Cake</title>
+    <style>
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f7f9fc, #f7f9fc); /* Light blue gradient */
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.1); /* Super light black */
+            color: #fff;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        /* Introduction Section with Background Image */
+        #intro {
+            position: relative;
+            padding: 60px 20px;
+            background: url('https://us.images.westend61.de/0001500799pw/teenage-girl-in-kitchen-baking-a-cake-MINF15475.jpg') no-repeat center center/cover;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Text content within the Introduction */
+        .fade-in {
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 1.5s ease-in forwards; /* Fade-in effect */
+        }
+
+        /* Blurred White Background for Text */
+        #intro .content {
+            background: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+            backdrop-filter: blur(10px); /* Blur effect */
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        #intro h2 {
+            color: #000; /* Black color for "Introduction" */
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        #intro p {
+            color: #333; /* Dark text for readability */
+        }
+
+        /* Section Titles */
+        h2 {
+            color: #4682b4; /* Steel Blue */
+            text-align: center;
+            font-size: 1.8em;
+            margin: 20px 0 10px;
+        }
+
+        /* Ingredients and Steps */
+        ul, ol {
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Media (Image and Video) */
+        .media {
+            text-align: center;
+            margin: 20px 0;
+        }
+        img, iframe {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(70, 130, 180, 0.9); /* Steel Blue */
+            color: #fff;
+            margin-top: 30px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>How to Make a Cake</h1>
+</header>
+
+<!-- Introduction Section -->
+<section id="intro">
+    <div class="content">
+        <div class="fade-in"> <!-- Fade-in wrapper -->
+            <h2>Introduction</h2>
+            <p>Welcome to our step-by-step guide on making a delicious cake. Whether you're a beginner or an experienced baker, this recipe is easy to follow and perfect for any occasion!</p>
+        </div>
+    </div>
+</section>
+
+<!-- Ingredients Section -->
+<section id="ingredients">
+    <h2>Ingredients</h2>
+    <ul>
+        <li>2 cups all-purpose flour</li>
+        <li>1 and 1/2 cups granulated sugar</li>
+        <li>1 cup milk</li>
+        <li>1/2 cup butter (softened)</li>
+        <li>2 large eggs</li>
+        <li>1 tablespoon baking powder</li>
+        <li>1 teaspoon vanilla extract</li>
+        <li>1/4 teaspoon salt</li>
+    </ul>
+</section>
+
+<!-- Instructions Section -->
+<section id="instructions">
+    <h2>Instructions</h2>
+    <ol>
+        <li>Preheat your oven to 350°F (175°C) and grease a 9x9 inch baking pan.</li>
+        <li>In a large bowl, mix flour, baking powder, and salt.</li>
+        <li>In a separate bowl, cream together the butter and sugar until smooth.</li>
+        <li>Add the eggs and vanilla extract to the butter mixture, beating until well combined.</li>
+        <li>Gradually add the dry ingredients to the wet mixture, alternating with milk, and mix until smooth.</li>
+        <li>Pour the batter into the prepared pan.</li>
+        <li>Bake for 30-35 minutes or until a toothpick inserted into the center comes out clean.</li>
+        <li>Let the cake cool before decorating as desired.</li>
+    </ol>
+</section>
+
+<!-- Feedback Section -->
+<section id="feedback">
+    <h2>Did You Like My Website?</h2>
+    <form id="feedbackForm" action="https://example.com/feedback-handler" method="POST">
+        <div class="custom-checkbox">
+            <input type="radio" id="likeYes" name="liked" value="yes">
+            <label for="likeYes">😊 Yes, I liked it!</label>
+        </div>
+        <div class="custom-checkbox">
+            <input type="radio" id="likeNo" name="liked" value="no">
+            <label for="likeNo">😞 No, I didn't like it.</label>
+        </div>
+        <br>
+        <input type="submit" value="Submit Feedback" class="btn-primary">
+        <p id="thankYouMessage" style="display:none; color: #4CAF50;">Thank you for your feedback! 😊</p>
+    </form>
+</section>
+
+<!-- JavaScript for handling feedback and unchecking -->
+<script>
+    // Uncheck the radio buttons when clicking outside the form
+    document.addEventListener('click', function (event) {
+        const form = document.getElementById('feedbackForm');
+        const isClickInsideForm = form.contains(event.target);
+        const radioYes = document.getElementById('likeYes');
+        const radioNo = document.getElementById('likeNo');
+
+        if (!isClickInsideForm) {
+            // Uncheck both radio buttons if click is outside the form
+            radioYes.checked = false;
+            radioNo.checked = false;
+        }
+    });
+
+    // Handle form submission and display thank you message
+    document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // Display thank you message
+        document.getElementById('thankYouMessage').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
